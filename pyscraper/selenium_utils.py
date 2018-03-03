@@ -7,7 +7,7 @@ from selenium.webdriver.common.by import By
 from selenium.webdriver.support.ui import WebDriverWait
 from selenium.webdriver.support import expected_conditions as EC
 
-from browsermobproxy import Server
+# from browsermobproxy import Server
 
 def get_headless_driver(no_sandbox=False):
     chrome_options = Options()
@@ -28,18 +28,18 @@ def get_headed_driver():
 
     return driver
 
-def get_headed_proxy():
-    server = Server('browsermob-proxy-2.1.4/bin/browsermob-proxy')
-    server.start()
-    proxy = server.create_proxy()
-
-    current_path = os.path.dirname(__file__)
-    filename = os.path.join(current_path, 'chromedriver')
-
-    chrome_options = webdriver.ChromeOptions()
-    chrome_options.add_argument("--proxy-server={0}".format(proxy.proxy))
-    browser = webdriver.Chrome(filename, chrome_options=chrome_options)
-    return proxy, browser
+# def get_headed_proxy():
+#     server = Server('browsermob-proxy-2.1.4/bin/browsermob-proxy')
+#     server.start()
+#     proxy = server.create_proxy()
+#
+#     current_path = os.path.dirname(__file__)
+#     filename = os.path.join(current_path, 'chromedriver')
+#
+#     chrome_options = webdriver.ChromeOptions()
+#     chrome_options.add_argument("--proxy-server={0}".format(proxy.proxy))
+#     browser = webdriver.Chrome(filename, chrome_options=chrome_options)
+#     return proxy, browser
 
 def wait_for_xpath(driver, xpath, time=10):
     element = WebDriverWait(driver, time).until(  # wait for form
