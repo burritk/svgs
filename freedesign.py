@@ -17,7 +17,7 @@ def get_headless_driver(no_sandbox=False):
     if no_sandbox:
         chrome_options.add_argument('--no-sandbox')
     # current_path = ''  # os.path.dirname(__file__)
-    filename = 'chromedriver'  # os.path.join(current_path, 'chromedriver')
+    filename = './chromedriver'  # os.path.join(current_path, 'chromedriver')
     driver = webdriver.Chrome(filename, chrome_options=chrome_options)
     # driver.fram
     return driver
