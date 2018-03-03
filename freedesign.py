@@ -30,6 +30,7 @@ def get_tree(url):
     tree = etree.parse(response, htmlparser)
     return tree
 
+driver = get_headless_driver(no_sandbox=True)
 history = [line.split('"')[0] for line in open('output.txt', 'r').readlines()]
 
 hrefs = []
@@ -57,7 +58,6 @@ for i in range(1, 4093):
 
 
 with open('output.txt', 'a+') as output:
-    driver = get_headless_driver(no_sandbox=True)
     usedrefs = []
     counter = 0
     for href in hrefs:
