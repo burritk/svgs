@@ -57,7 +57,7 @@ for i in range(1, 4093):
 
 
 with open('output.txt', 'a+') as output:
-    driver = get_headless_driver()
+    driver = get_headless_driver(no_sandbox=True)
     usedrefs = []
     counter = 0
     for href in hrefs:
