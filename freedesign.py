@@ -31,6 +31,7 @@ def get_tree(url):
     return tree
 
 driver = get_headless_driver(no_sandbox=True)
+print 'driver done'
 history = [line.split('"')[0] for line in open('output.txt', 'r').readlines()]
 
 hrefs = []
