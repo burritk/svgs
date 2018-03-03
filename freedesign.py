@@ -7,20 +7,21 @@ import urllib2
 import os
 from selenium import webdriver
 from selenium.webdriver.chrome.options import Options
+from pyscraper.selenium_utils import get_headless_driver
 
 from files.downloader import Downloader
 
 downloader = Downloader()
-def get_headless_driver(no_sandbox=False):
-    chrome_options = Options()
-    chrome_options.add_argument("--headless")
-    if no_sandbox:
-        chrome_options.add_argument('--no-sandbox')
-    # current_path = ''  # os.path.dirname(__file__)
-    filename = './chromedriver'  # os.path.join(current_path, 'chromedriver')
-    driver = webdriver.Chrome(filename, chrome_options=chrome_options)
-    # driver.fram
-    return driver
+# def get_headless_driver(no_sandbox=False):
+#     chrome_options = Options()
+#     chrome_options.add_argument("--headless")
+#     if no_sandbox:
+#         chrome_options.add_argument('--no-sandbox')
+#     # current_path = ''  # os.path.dirname(__file__)
+#     filename = './chromedriver'  # os.path.join(current_path, 'chromedriver')
+#     driver = webdriver.Chrome(filename, chrome_options=chrome_options)
+#     # driver.fram
+#     return driver
 
 def get_tree(url):
     # url = 'http://freedesignfile.com/category/free-vector/'
